@@ -16,9 +16,9 @@ final class LoginViewModel {
     private let loginEventSubject = PublishSubject<Void>()
     
     struct Input {
-        let emailText: Observable<String>
-        let passwordText: Observable<String>
-        let loginButton: Observable<Void>
+        let emailText: Driver<String>
+        let passwordText: Driver<String>
+        let loginButton: Signal<Void>
     }
     
     struct Output {
@@ -57,14 +57,20 @@ private extension LoginViewModel {
     
     func inputIsValid(_ input: Input) -> Driver<Bool> {
         Observable
-            .combineLatest(input.emailText, input.passwordText)
+            .combineLatest(
+                input.emailText.asObservable(),
+                input.passwordText.asObservable()
+            )
             .map { !$0.isEmpty && !$1.isEmpty }
             .asDriver(onErrorJustReturn: false)
     }
     
     func handleValidInputMessage(_ input: Input) {
         Observable
-            .combineLatest(input.emailText, input.passwordText)
+            .combineLatest(
+                input.emailText.asObservable(),
+                input.passwordText.asObservable()
+            )
             .map { emailText, passwordText in
                 if emailText.isEmpty {
                     return "Please provide an e-mail."
@@ -82,8 +88,13 @@ private extension LoginViewModel {
     
     func handleLoginButtonTap(_ input: Input) {
         let isSuccessed = true
-        let result = input.loginButton
-            .withLatestFrom(Observable.combineLatest(input.emailText, input.passwordText))
+        let result = input.loginButton.asObservable()
+            .withLatestFrom(
+                Observable.combineLatest(
+                    input.emailText.asObservable(),
+                    input.passwordText.asObservable()
+                )
+            )
             .flatMapLatest { email, pass in
                 return Single<String>.create { observer in
                     if isSuccessed {

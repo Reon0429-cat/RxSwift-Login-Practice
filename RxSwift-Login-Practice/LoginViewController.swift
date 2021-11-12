@@ -28,9 +28,9 @@ final class LoginViewController: UIViewController {
     
     private func setupBindings() {
         let input = LoginViewModel.Input(
-            emailText: emailTextField.rx.text.orEmpty.asObservable(),
-            passwordText: passwordTextField.rx.text.orEmpty.asObservable(),
-            loginButton: loginButton.rx.tap.asObservable()
+            emailText: emailTextField.rx.text.orEmpty.asDriver(),
+            passwordText: passwordTextField.rx.text.orEmpty.asDriver(),
+            loginButton: loginButton.rx.tap.asSignal()
         )
         
         let output = loginViewModel.transform(input)
