@@ -12,13 +12,14 @@
 		864723DEADFBAF355B6CCD17 /* Pods_RxSwift_Login_Practice_RxSwift_Login_PracticeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1820CD708C6AE52FDD88981B /* Pods_RxSwift_Login_Practice_RxSwift_Login_PracticeUITests.framework */; };
 		AB872646273DFF740094544E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB872645273DFF740094544E /* AppDelegate.swift */; };
 		AB872648273DFF740094544E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB872647273DFF740094544E /* SceneDelegate.swift */; };
-		AB87264A273DFF740094544E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB872649273DFF740094544E /* ViewController.swift */; };
+		AB87264A273DFF740094544E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB872649273DFF740094544E /* LoginViewController.swift */; };
 		AB87264D273DFF740094544E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB87264B273DFF740094544E /* Main.storyboard */; };
 		AB87264F273DFF750094544E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB87264E273DFF750094544E /* Assets.xcassets */; };
 		AB872652273DFF750094544E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB872650273DFF750094544E /* LaunchScreen.storyboard */; };
 		AB87265D273DFF750094544E /* RxSwift_Login_PracticeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB87265C273DFF750094544E /* RxSwift_Login_PracticeTests.swift */; };
 		AB872667273DFF750094544E /* RxSwift_Login_PracticeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB872666273DFF750094544E /* RxSwift_Login_PracticeUITests.swift */; };
 		AB872669273DFF750094544E /* RxSwift_Login_PracticeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB872668273DFF750094544E /* RxSwift_Login_PracticeUITestsLaunchTests.swift */; };
+		AB872676273E02010094544E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB872675273E02010094544E /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +50,7 @@
 		AB872642273DFF740094544E /* RxSwift-Login-Practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RxSwift-Login-Practice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB872645273DFF740094544E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB872647273DFF740094544E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AB872649273DFF740094544E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AB872649273DFF740094544E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AB87264C273DFF740094544E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AB87264E273DFF750094544E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB872651273DFF750094544E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,6 +60,7 @@
 		AB872662273DFF750094544E /* RxSwift-Login-PracticeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RxSwift-Login-PracticeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB872666273DFF750094544E /* RxSwift_Login_PracticeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwift_Login_PracticeUITests.swift; sourceTree = "<group>"; };
 		AB872668273DFF750094544E /* RxSwift_Login_PracticeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwift_Login_PracticeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		AB872675273E02010094544E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		F4D919484EEBE85B249A7102 /* Pods-RxSwift-Login-Practice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwift-Login-Practice.debug.xcconfig"; path = "Target Support Files/Pods-RxSwift-Login-Practice/Pods-RxSwift-Login-Practice.debug.xcconfig"; sourceTree = "<group>"; };
 		FD43B8C9206D2E02D0DCC2A0 /* Pods-RxSwift-Login-Practice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwift-Login-Practice.release.xcconfig"; path = "Target Support Files/Pods-RxSwift-Login-Practice/Pods-RxSwift-Login-Practice.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,7 +130,8 @@
 			children = (
 				AB872645273DFF740094544E /* AppDelegate.swift */,
 				AB872647273DFF740094544E /* SceneDelegate.swift */,
-				AB872649273DFF740094544E /* ViewController.swift */,
+				AB872649273DFF740094544E /* LoginViewController.swift */,
+				AB872675273E02010094544E /* LoginViewModel.swift */,
 				AB87264B273DFF740094544E /* Main.storyboard */,
 				AB87264E273DFF750094544E /* Assets.xcassets */,
 				AB872650273DFF750094544E /* LaunchScreen.storyboard */,
@@ -164,7 +167,6 @@
 				14850A43055937B320A08B93 /* Pods-RxSwift-Login-PracticeTests.debug.xcconfig */,
 				6FA396E21E2D1569E57941D8 /* Pods-RxSwift-Login-PracticeTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -407,7 +409,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB87264A273DFF740094544E /* ViewController.swift in Sources */,
+				AB872676273E02010094544E /* LoginViewModel.swift in Sources */,
+				AB87264A273DFF740094544E /* LoginViewController.swift in Sources */,
 				AB872646273DFF740094544E /* AppDelegate.swift in Sources */,
 				AB872648273DFF740094544E /* SceneDelegate.swift in Sources */,
 			);
